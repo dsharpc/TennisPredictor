@@ -1,0 +1,14 @@
+version : '3'
+services:
+  model:
+    build:
+      context: ./model
+      dockerfile: Dockerfile
+    volumes: 
+        - ./model/code:/code/
+        - ./model/data:/data/
+    ports:
+        - 8890:8890
+    tty: true
+    working_dir: /code/
+    command: /bin/bash
